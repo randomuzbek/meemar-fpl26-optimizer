@@ -1,0 +1,47 @@
+MEEMAR — FPL'26 FPGA Design Optimization Contest submission
+Copyright 2026 Kamoliddin Fatkhiddinov
+
+Licensed under the Apache License, Version 2.0 (the "License"); you may not use
+these files except in compliance with the License. You may obtain a copy of the
+License in the LICENSE file distributed with this repository, or at
+
+    http://www.apache.org/licenses/LICENSE-2.0
+
+================================================================================
+Upstream attribution
+================================================================================
+
+This repository contains a derivative work of the FPL'26 FPGA Design
+Optimization Contest reference agent:
+
+    https://github.com/Xilinx/fpl26_optimization_contest
+    Copyright (C) 2026, Advanced Micro Devices, Inc. All rights reserved.
+    SPDX-License-Identifier: Apache-2.0
+
+Specifically:
+
+  submission/dcp_optimizer.py
+      Derivative of the upstream file of the same name at commit a81aad5
+      (2026-07-29). The upstream copyright header, SPDX identifier and the
+      upstream statement that portions of the file consist of AI-generated
+      content are retained verbatim, as required by the License. The complete
+      set of modifications made by this project is reproduced separately as
+      submission/upstream.patch so that the boundary between upstream work and
+      this project's work is verifiable rather than asserted.
+
+  submission/SYSTEM_PROMPT.TXT
+  submission/requirements.txt
+      Modified from the upstream files of the same name at commit a81aad5.
+
+  LICENSE
+      Copied verbatim from upstream LICENSE-APACHE-2.0.txt.
+
+The following are original to this project and carry no upstream code:
+
+  tools/pack.py
+  tools/harness_timeline.py
+  benchmarks/heldout/
+  tests/
+  scripts/
+  docs/
+  README.md, RESULTS.md, CHANGELOG.md and the remaining repository metadata

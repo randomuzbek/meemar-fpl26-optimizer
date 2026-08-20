@@ -1,0 +1,41 @@
+# Python
+__pycache__/
+*.py[cod]
+*.egg-info/
+.venv/
+venv/
+build/
+dist/
+.pytest_cache/
+.ruff_cache/
+.coverage
+htmlcov/
+
+# Secrets — nothing of the sort belongs in this repository; this is a backstop
+.env
+.env.*
+*.pem
+*.key
+
+# Vivado / FPGA artifacts
+*.dcp
+*.log
+*.jou
+*.bit
+*.ltx
+*.Xil/
+vivado*.str
+vivado*.backup.jou
+
+# Packager output
+artifacts/
+*.zip
+
+# OS
+.DS_Store
+Thumbs.db
+
+# Editors
+.vscode/
+.idea/
+*.swp

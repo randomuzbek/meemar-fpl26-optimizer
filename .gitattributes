@@ -1,0 +1,20 @@
+# Order matters: in .gitattributes the LAST matching line wins, so the general rule comes first
+# and the specific overrides come after it. Putting the overrides on top silently disables them.
+
+# Default: normalise in the repository, let the platform decide on checkout.
+*               text=auto
+
+# Hardware sources and Tcl are plain text.
+*.v             text
+*.tcl           text
+*.xdc           text
+
+# Shell scripts must stay LF or they will not execute on the evaluation host.
+*.sh            text eol=lf
+
+# The submission's hashes are part of the record. Line endings here must never be rewritten by a
+# checkout, on any platform: a CRLF smudge changes every md5 in RESULTS.md and docs/reproduce.md,
+# and shipping a CRLF-smudged tree is what broke four evaluation runs during the contest.
+# `-text` disables all conversion in both directions.
+submission/**   -text
+*.patch         -text
