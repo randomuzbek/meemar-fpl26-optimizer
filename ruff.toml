@@ -1,0 +1,35 @@
+line-length = 100
+target-version = "py311"
+
+# submission/ is a frozen record of what was evaluated. Linting it would invite reformatting it,
+# and reformatting it would invalidate every hash in RESULTS.md.
+exclude = ["submission"]
+
+[lint]
+select = [
+    "E",    # pycodestyle errors
+    "F",    # pyflakes
+    "W",    # pycodestyle warnings
+    "I",    # import sorting
+    "UP",   # pyupgrade
+    "B",    # bugbear
+    "C4",   # comprehensions
+    "SIM",  # simplify
+    "RUF",  # ruff-specific
+]
+ignore = [
+    "E501",  # line length is enforced by the formatter, not the linter
+]
+
+[lint.per-file-ignores]
+"tests/*" = ["S101"]
+# tools/ is preserved close to the form in which it was used during the contest, so that the
+# packager published here is recognisably the one that built the scored archive. These two are
+# style preferences, and rewriting the control flow of _should_skip to satisfy one of them would
+# make the published tool differ from the tool that ran.
+"tools/pack.py" = ["SIM103"]
+"tools/harness_timeline.py" = ["SIM105"]
+
+[format]
+quote-style = "double"
+indent-style = "space"
