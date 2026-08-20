@@ -1,0 +1,38 @@
+cff-version: 1.2.0
+title: >-
+  MEEMAR: a cost-aware post-placement FPGA timing optimizer
+  (FPL'26 FPGA Design Optimization Contest submission)
+message: >-
+  If you refer to this work, please cite it using the metadata below.
+type: software
+authors:
+  - given-names: Kamoliddin
+    family-names: Fatkhiddinov
+    email: misteruzbekguy@gmail.com
+repository-code: 'https://github.com/randomuzbek/meemar-fpl26-optimizer'
+abstract: >-
+  A post-placement FPGA timing optimizer built for the FPL'26 FPGA Design
+  Optimization Contest. The contest scores max(0, alpha - 0.1*alpha*(beta +
+  gamma)), where alpha is the f_max improvement in MHz, beta is LLM spend in US
+  dollars and gamma is wall-clock hours, so compute is charged at a rate
+  proportional to the gain it is chasing. The optimizer makes that trade
+  explicit at runtime: a deterministic prepass ladder does most of the work and
+  banks every proven improvement to disk, a legality and rollback layer makes an
+  illegal or regressed output structurally impossible, and a language-model
+  stage runs only when a break-even calculation says the remaining seconds will
+  pay for themselves. The submission scored 318.254 across seven benchmarks with
+  zero disqualifications and 7/7 clean legality, placing in the top five, with a
+  total LLM spend of 0.34 US dollars.
+keywords:
+  - FPGA
+  - physical design
+  - timing optimization
+  - placement
+  - Vivado
+  - RapidWright
+  - design space exploration
+  - LLM agents
+  - cost-aware search
+license: Apache-2.0
+version: 1.0.0
+date-released: '2026-08-20'
