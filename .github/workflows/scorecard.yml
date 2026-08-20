@@ -14,8 +14,14 @@ jobs:
   analysis:
     name: Scorecard analysis
     runs-on: ubuntu-latest
-    # The scheduled run publishes results; skip it on forks, where it cannot.
-    if: github.event_name != 'schedule' || github.repository_owner == 'randomuzbek'
+    # Scorecard analyses public repositories only — on a private one its GraphQL queries come
+    # back "Resource not accessible by integration" and the job fails for a reason that has
+    # nothing to do with the code. This repository starts private and is flipped to public
+    # later, so gate on visibility rather than leaving a permanently red workflow. Also skip
+    # the scheduled run on forks, which cannot publish results.
+    if: >-
+      github.event.repository.visibility == 'public' &&
+      (github.event_name != 'schedule' || github.repository_owner == 'randomuzbek')
     permissions:
       security-events: write   # upload the SARIF result to code scanning
       id-token: write          # publish results to the Scorecard API
