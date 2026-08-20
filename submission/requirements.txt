@@ -1,0 +1,21 @@
+# FPGA Design Optimization Agent Dependencies
+#
+# Pinned to the exact versions verified working together on a clean instance
+# (fresh-venv `make setup` drill, 2026-07-10..16). Unpinned ranges re-resolve
+# fresh at eval time; a breaking major release (e.g. mcp 2.x) would fail import
+# and zero every benchmark. Exact pins remove that failure mode.
+
+# Core dependencies
+mcp==1.28.1
+
+# OpenAI client (only needed for full agent mode using OpenRouter, not test mode)
+openai==2.45.0
+
+# Shared pydantic stack (transitive dep of mcp+openai; pinned to the verified set)
+pydantic==2.13.4
+
+# RapidWright MCP dependencies
+rapidwright==2026.1.0
+
+# Vivado MCP dependencies (pexpect for process control)
+pexpect==4.9.0
