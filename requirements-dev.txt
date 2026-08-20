@@ -2,4 +2,4 @@
 # Vivado, no RapidWright and no FPGA, so nothing here pulls in the toolchain.
 pytest>=8.0
 ruff>=0.6
-pre-commit>=3.7
+pre-commit>=4.6.2
