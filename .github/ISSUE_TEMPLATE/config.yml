@@ -1,0 +1,15 @@
+blank_issues_enabled: false
+contact_links:
+  - name: Question about the approach or the results
+    url: https://github.com/randomuzbek/meemar-fpl26-optimizer/discussions
+    about: >-
+      Ask in Discussions rather than opening an issue. Questions about why something scores the
+      way it does, or how a lever works, are welcome there.
+
+  - name: Security or exposed-secret report
+    url: https://github.com/randomuzbek/meemar-fpl26-optimizer/security/advisories/new
+    about: Report privately. Never open a public issue for a credential or a vulnerability.
+
+  - name: The contest itself
+    url: https://xilinx.github.io/fpl26_optimization_contest/
+    about: Rules, benchmarks, evaluation harness and results are maintained by AMD.

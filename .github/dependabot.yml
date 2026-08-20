@@ -1,0 +1,23 @@
+version: 2
+updates:
+  # Pin and update the actions used by CI. Unpinned actions are the most common supply-chain
+  # exposure in a repository this small.
+  - package-ecosystem: github-actions
+    directory: /
+    schedule:
+      interval: monthly
+    commit-message:
+      prefix: ci
+
+  # Development dependencies only. requirements.txt under submission/ is deliberately NOT
+  # tracked here: it is part of the frozen artifact and must not be bumped.
+  - package-ecosystem: pip
+    directory: /
+    schedule:
+      interval: monthly
+    commit-message:
+      prefix: deps
+    allow:
+      - dependency-name: pytest
+      - dependency-name: ruff
+      - dependency-name: pre-commit

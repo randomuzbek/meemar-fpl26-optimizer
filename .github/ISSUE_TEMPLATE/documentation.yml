@@ -1,0 +1,36 @@
+name: Documentation is wrong or unclear
+description: A claim in this repository is incorrect, unsupported, or contradicted by the code.
+labels: [documentation]
+body:
+  - type: markdown
+    attributes:
+      value: >-
+        Claims in this repository are meant to be checkable. If one is not, that is a real bug and
+        this is the right place for it.
+
+  - type: input
+    id: location
+    attributes:
+      label: Where
+      description: File and, if you can, the line or section heading.
+      placeholder: docs/scoring-model.md, "Consequence 2"
+    validations:
+      required: true
+
+  - type: textarea
+    id: claim
+    attributes:
+      label: What it says
+      description: Quote the passage.
+    validations:
+      required: true
+
+  - type: textarea
+    id: problem
+    attributes:
+      label: Why it is wrong
+      description: >-
+        If the code says otherwise, point at the function. If a number does not add up, show the
+        arithmetic.
+    validations:
+      required: true
