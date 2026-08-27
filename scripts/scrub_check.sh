@@ -56,6 +56,12 @@ PRIVATE='vivado-dev[0-9]?|fpl26contest-key|FPL26CONTEST_TOKEN|OPENROUTER_API_KEY
 
 ALLOWED_EMAIL='misteruzbekguy@gmail\.com'
 
+# Identities GitHub itself writes into the history once the repository is hosted there.
+# Dependabot opens its update branches under its own account and GitHub signs the resulting
+# commits as the committer, so `git log --all` sees both. Neither is ours to scrub, and
+# refusing them would only teach the reader to ignore this check. Anything else still fails.
+ALLOWED_BOTS='<[0-9]+\+dependabot\[bot\]@users\.noreply\.github\.com>|<noreply@github\.com>'
+
 # ---------------------------------------------------------------------------
 # 1. Working tree
 # ---------------------------------------------------------------------------
@@ -101,7 +107,7 @@ if [ "$TREE_ONLY" -eq 0 ]; then
 
     # Author and committer identities on every commit.
     idents=$(git log --all --format='%an <%ae>%n%cn <%ce>' | sort -u)
-    bad_idents=$(printf '%s\n' "$idents" | grep -vE "<$ALLOWED_EMAIL>" || true)
+    bad_idents=$(printf '%s\n' "$idents" | grep -vE "<$ALLOWED_EMAIL>|$ALLOWED_BOTS" || true)
     if [ -n "$bad_idents" ]; then
         fail "an unexpected author or committer identity is in the history" "$bad_idents" \
              "(expected only <${ALLOWED_EMAIL//\\/}>)"
