@@ -1,5 +1,5 @@
 # Development and CI dependencies. Deliberately tiny: the tests must run on a machine with no
 # Vivado, no RapidWright and no FPGA, so nothing here pulls in the toolchain.
-pytest>=8.0
+pytest>=9.1.1
 ruff>=0.6
 pre-commit>=4.6.2
