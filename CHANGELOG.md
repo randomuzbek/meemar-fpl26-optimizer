@@ -6,6 +6,14 @@ All notable changes to this project are documented here. The format follows
 
 ## [Unreleased]
 
+### Fixed
+
+- **The published LLM spend was a cent short.** RESULTS.md printed β to two decimals, the column
+  summed to $0.34, and $0.34 propagated into the README and the CITATION abstract — while the
+  measured total is $0.3482, and the slide and video submitted to the organizers say $0.35. β and
+  γ are now printed to four decimals, so the table adds up, and `tests/test_scorecard_table.py`
+  sums every column against the totals row.
+
 ### Added
 
 - Two figures in the README, in light and dark variants: the pipeline as it actually runs, and the

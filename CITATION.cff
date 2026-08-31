@@ -22,7 +22,7 @@ abstract: >-
   stage runs only when a break-even calculation says the remaining seconds will
   pay for themselves. The submission scored 318.254 across seven benchmarks with
   zero disqualifications and 7/7 clean legality, placing in the top five, with a
-  total LLM spend of 0.34 US dollars.
+  total LLM spend of 0.35 US dollars.
 keywords:
   - FPGA
   - physical design

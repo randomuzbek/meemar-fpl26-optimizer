@@ -18,14 +18,20 @@ Score is `max(0, α − 0.1·α·(β + γ))`.
 
 | benchmark | f_max in | f_max out | α (MHz) | β ($) | γ (h) | score | legality |
 |---|---|---|---|---|---|---|---|
-| `amd_mini-isp_2025.1_v2` | 288.0 | 410.5 | 122.491 | 0.00 | 0.088 | **121.411** | all pass |
-| `finn_radioml_2025.1` | 284.9 | 349.9 | 64.995 | 0.00 | 0.552 | **61.409** | all pass |
-| `rosetta_digit-recognition_2025.1` | 367.0 | 428.8 | 61.844 | 0.06 | 0.657 | **57.389** | all pass |
-| `rosetta_3d-rendering_2025.1_v2` | 236.7 | 289.6 | 52.917 | 0.00 | 0.415 | **50.720** | all pass |
-| `fir_systolic_transposed_routed_2025.1` | 355.5 | 374.4 | 18.900 | 0.23 | 0.858 | **16.836** | all pass |
-| `fir_symmetric_systolic_routed_2025.1` | 405.7 | 414.2 | 8.570 | 0.01 | 1.000 | **7.702** | all pass, γ-capped |
-| `vtr_mcml_2025.1_v2` | 69.3 | 72.4 | 3.067 | 0.04 | 0.874 | **2.787** | all pass |
-| **total** | | | **332.784** | **0.34** | **4.444** | **318.254** | **7/7** |
+| `amd_mini-isp_2025.1_v2` | 288.0 | 410.5 | 122.491 | 0.0000 | 0.0882 | **121.411** | all pass |
+| `finn_radioml_2025.1` | 284.9 | 349.9 | 64.995 | 0.0000 | 0.5517 | **61.409** | all pass |
+| `rosetta_digit-recognition_2025.1` | 367.0 | 428.8 | 61.844 | 0.0629 | 0.6574 | **57.389** | all pass |
+| `rosetta_3d-rendering_2025.1_v2` | 236.7 | 289.6 | 52.917 | 0.0000 | 0.4151 | **50.720** | all pass |
+| `fir_systolic_transposed_routed_2025.1` | 355.5 | 374.4 | 18.900 | 0.2341 | 0.8582 | **16.836** | all pass |
+| `fir_symmetric_systolic_routed_2025.1` | 405.7 | 414.2 | 8.570 | 0.0128 | 1.0000 | **7.702** | all pass, γ-capped |
+| `vtr_mcml_2025.1_v2` | 69.3 | 72.4 | 3.067 | 0.0384 | 0.8739 | **2.787** | all pass |
+| **total** | | | **332.784** | **0.3482** | **4.4445** | **318.254** | **7/7** |
+
+β and γ are quoted to four decimals because two and three do not add up: rounded, the β column
+sums to $0.34 against a measured $0.3482, and the γ column to 4.444 h against 4.4445 h. The gaps
+are rounding, not missing charges — but $0.34 is what the earlier version of this table published,
+while the slide and video submitted to the organizers say $0.35. `tests/test_scorecard_table.py`
+now sums each column against the totals row so a table cannot disagree with itself again.
 
 Legality means all five organizer checks passed on every benchmark: `par_routed`,
 `par_drc_clean`, `hold_passed`, `pulse_width_passed`, `sim_passed`.
@@ -36,7 +42,8 @@ Legality means all five organizer checks passed on every benchmark: `par_routed`
 formula charges for compute, and it is why the optimizer treats runtime as a priced resource
 rather than a free one. See [docs/scoring-model.md](docs/scoring-model.md).
 
-**LLM spend was $0.34 in total, and three benchmarks spent nothing at all.** The deterministic
+**LLM spend was $0.35 in total ($0.3482), and three benchmarks spent nothing at all.** The
+deterministic
 prepass ladder brought `amd_mini-isp`, `finn_radioml` and `rosetta_3d-rendering` to a floor high
 enough that the early-exit fired and the language model was never consulted. Those three are
 three of the top four scores. The largest single result in the suite — +122.491 MHz on

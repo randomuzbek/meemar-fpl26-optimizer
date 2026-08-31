@@ -90,7 +90,7 @@ The submission ran on the organizers' hardware, seven benchmarks, one instance e
 | Benchmarks | 7 (four of them unseen before the final round) |
 | Legality | **7/7 fully clean** — routed, DRC clean, hold, pulse width, simulation |
 | Sum of f_max improvement | **332.784 MHz** |
-| Total LLM spend | **$0.34** across all seven benchmarks |
+| Total LLM spend | **$0.35** across all seven benchmarks ($0.3482 measured) |
 | Best single design | `amd_mini-isp` 288.0 → **410.5 MHz** (+42.5 %) |
 
 <picture>
