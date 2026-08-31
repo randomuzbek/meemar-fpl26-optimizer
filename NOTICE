@@ -29,9 +29,17 @@ Specifically:
       submission/upstream.patch so that the boundary between upstream work and
       this project's work is verifiable rather than asserted.
 
-  submission/SYSTEM_PROMPT.TXT
   submission/requirements.txt
-      Modified from the upstream files of the same name at commit a81aad5.
+      Modified from the upstream file of the same name at commit a81aad5. The
+      modification is reproduced in submission/upstream.patch.
+
+  submission/SYSTEM_PROMPT.TXT
+      Copied verbatim from the upstream file of the same name at commit a81aad5
+      and byte-identical to it (md5 4aaf8d8dceaea50c3153b24e0336b802). It is
+      shipped because dcp_optimizer.py loads it at run time, not because this project
+      changed it: no part of it is this project's work. It therefore does not
+      appear in submission/upstream.patch, which contains only the two files
+      that were modified.
 
   LICENSE
       Copied verbatim from upstream LICENSE-APACHE-2.0.txt.
