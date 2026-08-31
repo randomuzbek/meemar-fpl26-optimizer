@@ -39,7 +39,8 @@ md5sum dcp_optimizer.py requirements.txt
 Applying `submission/upstream.patch` to upstream `a81aad5` reproduces
 `submission/dcp_optimizer.py` (`64475899…`) and `submission/requirements.txt` (`be4dc2a5…`)
 byte for byte. The patch is 2 873 lines and is the authoritative statement of this project's
-contribution: 2 696 lines added, 105 removed, across two files.
+contribution: 2 579 lines added, 93 removed, across two files (`git apply --stat` prints exactly
+those numbers, and `tests/test_upstream_patch.py` asserts them).
 
 The `core.autocrlf=false -c core.eol=lf` overrides are not optional on Windows. Without them git
 smudges the result to CRLF and every hash changes — the same class of failure described under
