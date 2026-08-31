@@ -1,8 +1,12 @@
 # MEEMAR — FPL'26 FPGA Design Optimization Contest submission
 
+[![CI](https://github.com/randomuzbek/meemar-fpl26-optimizer/actions/workflows/ci.yml/badge.svg?branch=main)](https://github.com/randomuzbek/meemar-fpl26-optimizer/actions/workflows/ci.yml)
+[![OpenSSF Scorecard](https://api.scorecard.dev/projects/github.com/randomuzbek/meemar-fpl26-optimizer/badge)](https://scorecard.dev/viewer/?uri=github.com/randomuzbek/meemar-fpl26-optimizer)
 [![License](https://img.shields.io/badge/license-Apache--2.0-blue.svg)](LICENSE)
 [![Score](https://img.shields.io/badge/final%20score-318.254-brightgreen.svg)](RESULTS.md)
 [![Legality](https://img.shields.io/badge/legality-7%2F7%20clean-brightgreen.svg)](RESULTS.md)
+[![Views](https://hits.sh/github.com/randomuzbek/meemar-fpl26-optimizer.svg?label=views&color=1f6feb)](https://hits.sh/github.com/randomuzbek/meemar-fpl26-optimizer/)
+[![Stars](https://img.shields.io/github/stars/randomuzbek/meemar-fpl26-optimizer?label=stars&color=1f6feb)](https://github.com/randomuzbek/meemar-fpl26-optimizer/stargazers)
 
 A post-placement FPGA timing optimizer that **prices its own compute in contest points** and
 stops when the next second stops paying for itself.
@@ -125,6 +129,7 @@ servers. It is not a standalone tool.
 git clone --recursive https://github.com/Xilinx/fpl26_optimization_contest.git
 cd fpl26_optimization_contest
 git checkout a81aad5
+git submodule update --init --recursive   # the checkout moves the superproject, not the submodules
 cp /path/to/this/repo/submission/dcp_optimizer.py .
 cp /path/to/this/repo/submission/SYSTEM_PROMPT.TXT .
 cp /path/to/this/repo/submission/requirements.txt .
