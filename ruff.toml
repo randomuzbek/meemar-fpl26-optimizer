@@ -29,6 +29,10 @@ ignore = [
 # make the published tool differ from the tool that ran.
 "tools/pack.py" = ["SIM103"]
 "tools/harness_timeline.py" = ["SIM105"]
+# The figures are labelled in the contest's own notation, so alpha, beta, gamma and the minus sign
+# are the correct characters rather than lookalikes to be normalised away. RUF001 cannot tell the
+# difference between notation and a homoglyph typo.
+"tools/build_figures.py" = ["RUF001"]
 
 [format]
 quote-style = "double"

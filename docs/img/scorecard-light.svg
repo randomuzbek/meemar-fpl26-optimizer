@@ -1,0 +1,45 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="924" height="346" viewBox="0 0 924 346" role="img" aria-label="Per-benchmark score, FPL'26 final round: 318.254 points total, of which 14.53 points were spent on compute">
+<rect width="924" height="346" fill="#ffffff"/>
+<text x="20" y="30" font-family="ui-sans-serif,-apple-system,BlinkMacSystemFont,'Segoe UI',Helvetica,Arial,sans-serif" font-size="16" font-weight="600" fill="#1f2328">Per-benchmark score — FPL'26 final round</text>
+<text x="20" y="50" font-family="ui-sans-serif,-apple-system,BlinkMacSystemFont,'Segoe UI',Helvetica,Arial,sans-serif" font-size="12.5" fill="#59636e">Each bar is the f_max gain in MHz. The score is what survived the compute charge.</text>
+<rect x="20" y="60" width="9" height="9" rx="2" fill="#2a78d6"/>
+<text x="35" y="68.5" font-family="ui-sans-serif,-apple-system,BlinkMacSystemFont,'Segoe UI',Helvetica,Arial,sans-serif" font-size="12" fill="#59636e">score kept</text>
+<rect x="110.0" y="60" width="9" height="9" rx="2" fill="#eb6834"/>
+<text x="125.0" y="68.5" font-family="ui-sans-serif,-apple-system,BlinkMacSystemFont,'Segoe UI',Helvetica,Arial,sans-serif" font-size="12" fill="#59636e">paid to compute (β + γ)</text>
+<text x="252" y="95.5" text-anchor="end" font-family="ui-monospace,SFMono-Regular,'SF Mono',Menlo,Consolas,monospace" font-size="12" fill="#59636e">amd_mini-isp</text>
+<rect x="268" y="83.0" width="555.1" height="16" fill="#2a78d6"/>
+<rect x="825.1" y="83.0" width="2.9" height="16" rx="4" fill="#eb6834"/>
+<rect x="825.1" y="83.0" width="2.9" height="16" fill="#eb6834"/>
+<text x="840.0" y="95.5" font-family="ui-monospace,SFMono-Regular,'SF Mono',Menlo,Consolas,monospace" font-size="12" fill="#1f2328">121.4</text>
+<text x="252" y="129.5" text-anchor="end" font-family="ui-monospace,SFMono-Regular,'SF Mono',Menlo,Consolas,monospace" font-size="12" fill="#59636e">finn_radioml</text>
+<rect x="268" y="117.0" width="280.7" height="16" fill="#2a78d6"/>
+<rect x="550.7" y="117.0" width="14.4" height="16" rx="4" fill="#eb6834"/>
+<rect x="550.7" y="117.0" width="4.0" height="16" fill="#eb6834"/>
+<text x="577.1" y="129.5" font-family="ui-monospace,SFMono-Regular,'SF Mono',Menlo,Consolas,monospace" font-size="12" fill="#1f2328">61.4</text>
+<text x="252" y="163.5" text-anchor="end" font-family="ui-monospace,SFMono-Regular,'SF Mono',Menlo,Consolas,monospace" font-size="12" fill="#59636e">rosetta_digit-recognition</text>
+<rect x="268" y="151.0" width="262.4" height="16" fill="#2a78d6"/>
+<rect x="532.4" y="151.0" width="18.4" height="16" rx="4" fill="#eb6834"/>
+<rect x="532.4" y="151.0" width="4.0" height="16" fill="#eb6834"/>
+<text x="562.7" y="163.5" font-family="ui-monospace,SFMono-Regular,'SF Mono',Menlo,Consolas,monospace" font-size="12" fill="#1f2328">57.4</text>
+<text x="252" y="197.5" text-anchor="end" font-family="ui-monospace,SFMono-Regular,'SF Mono',Menlo,Consolas,monospace" font-size="12" fill="#59636e">rosetta_3d-rendering</text>
+<rect x="268" y="185.0" width="231.9" height="16" fill="#2a78d6"/>
+<rect x="501.9" y="185.0" width="8.0" height="16" rx="4" fill="#eb6834"/>
+<rect x="501.9" y="185.0" width="4.0" height="16" fill="#eb6834"/>
+<text x="521.9" y="197.5" font-family="ui-monospace,SFMono-Regular,'SF Mono',Menlo,Consolas,monospace" font-size="12" fill="#1f2328">50.7</text>
+<text x="252" y="231.5" text-anchor="end" font-family="ui-monospace,SFMono-Regular,'SF Mono',Menlo,Consolas,monospace" font-size="12" fill="#59636e">fir_systolic_transposed</text>
+<rect x="268" y="219.0" width="77.0" height="16" fill="#2a78d6"/>
+<rect x="347.0" y="219.0" width="7.4" height="16" rx="4" fill="#eb6834"/>
+<rect x="347.0" y="219.0" width="4.0" height="16" fill="#eb6834"/>
+<text x="366.4" y="231.5" font-family="ui-monospace,SFMono-Regular,'SF Mono',Menlo,Consolas,monospace" font-size="12" fill="#1f2328">16.8</text>
+<text x="252" y="265.5" text-anchor="end" font-family="ui-monospace,SFMono-Regular,'SF Mono',Menlo,Consolas,monospace" font-size="12" fill="#59636e">fir_symmetric_systolic</text>
+<rect x="268" y="253.0" width="35.2" height="16" fill="#2a78d6"/>
+<rect x="305.2" y="253.0" width="2.0" height="16" rx="4" fill="#eb6834"/>
+<rect x="305.2" y="253.0" width="2.0" height="16" fill="#eb6834"/>
+<text x="319.2" y="265.5" font-family="ui-monospace,SFMono-Regular,'SF Mono',Menlo,Consolas,monospace" font-size="12" fill="#1f2328">7.7</text>
+<text x="252" y="299.5" text-anchor="end" font-family="ui-monospace,SFMono-Regular,'SF Mono',Menlo,Consolas,monospace" font-size="12" fill="#59636e">vtr_mcml</text>
+<rect x="268" y="287.0" width="12.7" height="16" fill="#2a78d6"/>
+<rect x="282.7" y="287.0" width="1.5" height="16" rx="4" fill="#eb6834"/>
+<rect x="282.7" y="287.0" width="1.5" height="16" fill="#eb6834"/>
+<text x="294.0" y="299.5" font-family="ui-monospace,SFMono-Regular,'SF Mono',Menlo,Consolas,monospace" font-size="12" fill="#1f2328">2.8</text>
+<text x="20" y="334" font-family="ui-sans-serif,-apple-system,BlinkMacSystemFont,'Segoe UI',Helvetica,Arial,sans-serif" font-size="12.5" fill="#59636e">318.254 points from 332.784 MHz — the whole search cost 14.53 points, 4.4 % of the gain.</text>
+</svg>

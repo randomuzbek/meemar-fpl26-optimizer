@@ -6,6 +6,15 @@ All notable changes to this project are documented here. The format follows
 
 ## [Unreleased]
 
+### Added
+
+- Two figures in the README, in light and dark variants: the pipeline as it actually runs, and the
+  per-benchmark scorecard. `tools/build_figures.py` draws the scorecard from the table in
+  RESULTS.md and `tests/test_figures.py` fails if the committed SVGs no longer match it, because a
+  figure with numbers typed into it is a second copy of the data that no test reads.
+- A "Checking it rather than believing it" section: the three commands that verify the artifact
+  without an FPGA, and a table of what each document answers.
+
 ### Changed
 
 - The README leads with the cost model and the mechanism, and reports the scorecard after them.

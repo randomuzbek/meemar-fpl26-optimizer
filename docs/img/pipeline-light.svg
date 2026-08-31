@@ -1,0 +1,41 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="880" height="366" viewBox="0 0 880 366" role="img" aria-label="Pipeline: a checkpoint enters a deterministic ladder, a cost model decides whether more search pays for itself, the language-model stage runs only if it does, and a safety net gates every candidate">
+<defs><marker id="head" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="6" markerHeight="6" orient="auto-start-reverse"><path d="M 0 0 L 10 5 L 0 10 z" fill="#d0d7de"/></marker></defs>
+<rect width="880" height="366" fill="#ffffff"/>
+<text x="20" y="28" font-family="ui-sans-serif,-apple-system,BlinkMacSystemFont,'Segoe UI',Helvetica,Arial,sans-serif" font-size="16" font-weight="600" fill="#1f2328">How a run spends its hour</text>
+<rect x="20" y="74" width="116" height="62" rx="8" fill="#f6f8fa" stroke="#d0d7de"/>
+<text x="34" y="96" font-family="ui-sans-serif,-apple-system,BlinkMacSystemFont,'Segoe UI',Helvetica,Arial,sans-serif" font-size="13" font-weight="600" fill="#1f2328">input .dcp</text>
+<text x="34" y="114" font-family="ui-monospace,SFMono-Regular,'SF Mono',Menlo,Consolas,monospace" font-size="11" fill="#59636e">placed,</text>
+<text x="34" y="129" font-family="ui-monospace,SFMono-Regular,'SF Mono',Menlo,Consolas,monospace" font-size="11" fill="#59636e">unrouted</text>
+<rect x="178" y="56" width="258" height="98" rx="8" fill="#f6f8fa" stroke="#d0d7de"/>
+<rect x="178" y="56" width="3.5" height="98" rx="1.75" fill="#2a78d6"/>
+<text x="192" y="78" font-family="ui-sans-serif,-apple-system,BlinkMacSystemFont,'Segoe UI',Helvetica,Arial,sans-serif" font-size="13" font-weight="600" fill="#1f2328">1 — Deterministic ladder</text>
+<text x="192" y="96" font-family="ui-monospace,SFMono-Regular,'SF Mono',Menlo,Consolas,monospace" font-size="11" fill="#59636e">floor · phys_opt · pblock shrink</text>
+<text x="192" y="111" font-family="ui-monospace,SFMono-Regular,'SF Mono',Menlo,Consolas,monospace" font-size="11" fill="#59636e">free-replace · final polish</text>
+<text x="192" y="126" font-family="ui-monospace,SFMono-Regular,'SF Mono',Menlo,Consolas,monospace" font-size="11" fill="#59636e">byte-identical on a repeat run</text>
+<rect x="478" y="56" width="212" height="98" rx="8" fill="#f6f8fa" stroke="#d0d7de"/>
+<rect x="478" y="56" width="3.5" height="98" rx="1.75" fill="#eb6834"/>
+<text x="492" y="78" font-family="ui-sans-serif,-apple-system,BlinkMacSystemFont,'Segoe UI',Helvetica,Arial,sans-serif" font-size="13" font-weight="600" fill="#1f2328">4 — Cost model</text>
+<text x="492" y="96" font-family="ui-monospace,SFMono-Regular,'SF Mono',Menlo,Consolas,monospace" font-size="11" fill="#59636e">Δscore = Δα − 0.1·α·(Δβ + Δγ)</text>
+<text x="492" y="111" font-family="ui-monospace,SFMono-Regular,'SF Mono',Menlo,Consolas,monospace" font-size="11" fill="#59636e">γ caps hard at 3600 s</text>
+<text x="492" y="126" font-family="ui-monospace,SFMono-Regular,'SF Mono',Menlo,Consolas,monospace" font-size="11" fill="#59636e">does the next second pay?</text>
+<rect x="748" y="74" width="112" height="62" rx="8" fill="#f6f8fa" stroke="#d0d7de"/>
+<text x="762" y="96" font-family="ui-sans-serif,-apple-system,BlinkMacSystemFont,'Segoe UI',Helvetica,Arial,sans-serif" font-size="13" font-weight="600" fill="#1f2328">output .dcp</text>
+<text x="762" y="114" font-family="ui-monospace,SFMono-Regular,'SF Mono',Menlo,Consolas,monospace" font-size="11" fill="#59636e">best proven</text>
+<text x="762" y="129" font-family="ui-monospace,SFMono-Regular,'SF Mono',Menlo,Consolas,monospace" font-size="11" fill="#59636e">state</text>
+<rect x="478" y="208" width="212" height="76" rx="8" fill="#f6f8fa" stroke="#d0d7de"/>
+<rect x="478" y="208" width="3.5" height="76" rx="1.75" fill="#2a78d6"/>
+<text x="492" y="230" font-family="ui-sans-serif,-apple-system,BlinkMacSystemFont,'Segoe UI',Helvetica,Arial,sans-serif" font-size="13" font-weight="600" fill="#1f2328">3 — LLM stage</text>
+<text x="492" y="248" font-family="ui-monospace,SFMono-Regular,'SF Mono',Menlo,Consolas,monospace" font-size="11" fill="#59636e">best-of-K, model fallback</text>
+<text x="492" y="263" font-family="ui-monospace,SFMono-Regular,'SF Mono',Menlo,Consolas,monospace" font-size="11" fill="#59636e">skipped on 3 of 7 benchmarks</text>
+<path d="M 136 105 L 174 105" stroke="#d0d7de" stroke-width="2" fill="none" marker-end="url(#head)"/>
+<path d="M 436 105 L 474 105" stroke="#d0d7de" stroke-width="2" fill="none" marker-end="url(#head)"/>
+<path d="M 690 105 L 744 105" stroke="#d0d7de" stroke-width="2" fill="none" marker-end="url(#head)"/>
+<text x="717.0" y="96.0" text-anchor="middle" font-family="ui-sans-serif,-apple-system,BlinkMacSystemFont,'Segoe UI',Helvetica,Arial,sans-serif" font-size="11" fill="#59636e">no</text>
+<path d="M 584 154 L 584 204" stroke="#d0d7de" stroke-width="2" fill="none" marker-end="url(#head)"/>
+<text x="584.0" y="171.0" text-anchor="middle" font-family="ui-sans-serif,-apple-system,BlinkMacSystemFont,'Segoe UI',Helvetica,Arial,sans-serif" font-size="11" fill="#59636e">yes</text>
+<path d="M 690 246 L 804 246 L 804 140" stroke="#d0d7de" stroke-width="2" fill="none" marker-end="url(#head)"/>
+<rect x="20" y="298" width="840" height="54" rx="8" fill="#f6f8fa" stroke="#d0d7de"/>
+<text x="34" y="320" font-family="ui-sans-serif,-apple-system,BlinkMacSystemFont,'Segoe UI',Helvetica,Arial,sans-serif" font-size="13" font-weight="600" fill="#1f2328">2 — Safety net, underneath all of it</text>
+<text x="34" y="338" font-family="ui-monospace,SFMono-Regular,'SF Mono',Menlo,Consolas,monospace" font-size="11" fill="#59636e">legality gate · atomic write · autosave · rollback</text>
+<text x="34" y="353" font-family="ui-monospace,SFMono-Regular,'SF Mono',Menlo,Consolas,monospace" font-size="11" fill="#59636e">the output is the maximum over every state ever proven, never the last one tried</text>
+</svg>

@@ -18,6 +18,11 @@ where it scored 318.254 across seven benchmarks with zero disqualifications and 
 five — one person, no institutional compute. The scorecard is [below](#what-it-scored); the
 reasoning that produced it comes first.
 
+<picture>
+  <source media="(prefers-color-scheme: dark)" srcset="docs/img/pipeline-dark.svg">
+  <img alt="Pipeline: a checkpoint enters a deterministic ladder; a cost model decides whether more search pays for itself; the language-model stage runs only if it does; a safety net gates every candidate" src="docs/img/pipeline-light.svg" width="100%">
+</picture>
+
 ---
 
 ## The idea
@@ -88,6 +93,11 @@ The submission ran on the organizers' hardware, seven benchmarks, one instance e
 | Total LLM spend | **$0.34** across all seven benchmarks |
 | Best single design | `amd_mini-isp` 288.0 → **410.5 MHz** (+42.5 %) |
 
+<picture>
+  <source media="(prefers-color-scheme: dark)" srcset="docs/img/scorecard-dark.svg">
+  <img alt="Per-benchmark score: amd_mini-isp 121.4, finn_radioml 61.4, rosetta_digit-recognition 57.4, rosetta_3d-rendering 50.7, fir_systolic_transposed 16.8, fir_symmetric_systolic 7.7, vtr_mcml 2.8 — 318.254 points from 332.784 MHz, the search costing 14.53 points" src="docs/img/scorecard-light.svg" width="100%">
+</picture>
+
 The row worth pausing on is the spend. **Every dollar and every hour the search cost — β and γ
 together — came to 14.53 points** against 332.784 MHz of gain: that is the entire price of
 searching, and it is the term the design above exists to control. The largest single result in the
@@ -115,6 +125,31 @@ cap; its timeline shows the last improvement at t = 3240 s, so the truncation co
 itself rather than a banked gain. And the determinism claim was verified against the organizers'
 own numbers: two repeated benchmarks came back byte-identical to our preview runs.
 
+## Checking it rather than believing it
+
+Every number above is either in the repository or reproducible from it, and none of this needs an
+FPGA:
+
+```bash
+md5sum submission/dcp_optimizer.py          # 64475899a43e372f4dcf441a254eec9d, the scored bytes
+pip install -r requirements-dev.txt
+pytest -q                                   # parsers, packager, artifact identity, the docs' own claims
+```
+
+The test suite is not decoration: it asserts the shipped md5s, that the line numbers in the docs
+point at the functions they name, and that the figures above were drawn from
+[RESULTS.md](RESULTS.md) rather than typed in. Rebuilding the scored archive and reproducing the
+diff against AMD's upstream are two more commands, in
+**[docs/reproduce.md](docs/reproduce.md)**.
+
+| document | what it answers |
+|---|---|
+| [RESULTS.md](RESULTS.md) | the official per-benchmark scorecard, α/β/γ decomposed |
+| [docs/architecture.md](docs/architecture.md) | the four layers, mapped to functions and line numbers |
+| [docs/scoring-model.md](docs/scoring-model.md) | why a dollar costs what an hour costs |
+| [docs/measurement-notes.md](docs/measurement-notes.md) | three ways this harness will lie to you if you let it |
+| [docs/reproduce.md](docs/reproduce.md) | verify the hashes, rebuild the archive, run it |
+
 ## Layout
 
 ```
@@ -127,8 +162,9 @@ docs/                architecture, scoring model, measurement notes, reproductio
 tools/
   pack.py              the deterministic packager that built the scored zip
   harness_timeline.py  reads contest harness logs without being lied to by them
+  build_figures.py     draws the figures above from RESULTS.md, so they cannot drift from it
 benchmarks/heldout/  generalization designs outside the contest suite
-tests/               Vivado-free unit tests for the parsing and packaging paths
+tests/               Vivado-free unit tests: parsers, packager, artifact identity, the docs
 ```
 
 ## Running it
@@ -152,13 +188,6 @@ make run_optimizer DCP=<benchmark>
 
 To rebuild the submitted archive and check its md5 against the scored one, see
 **[docs/reproduce.md](docs/reproduce.md)**.
-
-The unit tests need neither Vivado nor an FPGA:
-
-```bash
-pip install -r requirements-dev.txt
-pytest -q
-```
 
 ## Citing
 
