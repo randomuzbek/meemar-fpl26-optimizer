@@ -189,7 +189,7 @@ def _arrow(c, x1, y1, x2, y2, label=None, label_dy=-8):
 def render_pipeline(theme: str) -> str:
     """The four layers as they actually run: the model is the last thing tried, not the first."""
     c = THEMES[theme]
-    width, height = 880, 366
+    width, height = 880, 372
     out = [
         f'<svg xmlns="http://www.w3.org/2000/svg" width="{width}" height="{height}" '
         f'viewBox="0 0 {width} {height}" role="img" aria-label="Pipeline: a checkpoint enters a '
@@ -261,7 +261,7 @@ def render_pipeline(theme: str) -> str:
         20,
         298,
         840,
-        54,
+        64,
         "2 — Safety net, underneath all of it",
         [
             "legality gate · atomic write · autosave · rollback",
