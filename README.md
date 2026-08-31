@@ -1,4 +1,4 @@
-# MEEMAR — FPL'26 FPGA Design Optimization Contest submission
+# FPL'26 FPGA Design Optimization Contest — team MEEMAR's submission
 
 [![CI](https://github.com/randomuzbek/meemar-fpl26-optimizer/actions/workflows/ci.yml/badge.svg?branch=main)](https://github.com/randomuzbek/meemar-fpl26-optimizer/actions/workflows/ci.yml)
 [![OpenSSF Scorecard](https://api.scorecard.dev/projects/github.com/randomuzbek/meemar-fpl26-optimizer/badge)](https://scorecard.dev/viewer/?uri=github.com/randomuzbek/meemar-fpl26-optimizer)
@@ -9,26 +9,16 @@
 [![Stars](https://img.shields.io/github/stars/randomuzbek/meemar-fpl26-optimizer?label=stars&color=1f6feb)](https://github.com/randomuzbek/meemar-fpl26-optimizer/stargazers)
 
 A post-placement FPGA timing optimizer that **prices its own compute in contest points** and
-stops when the next second stops paying for itself.
+stops when the next second stops paying for itself. MEEMAR is the team the entry was submitted
+under, not a product name: the optimizer is the single file in `submission/`, and it runs as the
+contest harness's `dcp_optimizer.py`.
 
-This is the submission that scored **318.254 across seven benchmarks with zero
-disqualifications** in the [FPL'26 FPGA Design Optimization Contest](https://xilinx.github.io/fpl26_optimization_contest/),
-placing in the top five. One person, no institutional compute.
+It was built for the [FPL'26 FPGA Design Optimization Contest](https://xilinx.github.io/fpl26_optimization_contest/),
+where it scored 318.254 across seven benchmarks with zero disqualifications and placed in the top
+five — one person, no institutional compute. The scorecard is [below](#what-it-scored); the
+reasoning that produced it comes first.
 
 ---
-
-## The result
-
-| | |
-|---|---|
-| Total score | **318.254** |
-| Benchmarks | 7 (four of them unseen before the final round) |
-| Legality | **7/7 fully clean** — routed, DRC clean, hold, pulse width, simulation |
-| Sum of f_max improvement | **332.784 MHz** |
-| Total LLM spend | **$0.34** across all seven benchmarks |
-| Best single design | `amd_mini-isp` 288.0 → **410.5 MHz** (+42.5 %) |
-
-Full per-benchmark scorecard, including the α/β/γ decomposition: **[RESULTS.md](RESULTS.md)**.
 
 ## The idea
 
@@ -84,6 +74,27 @@ final benchmarks it was skipped entirely, and those three scored highest.
 hindsight.
 
 Detail, with the call graph: **[docs/architecture.md](docs/architecture.md)**.
+
+## What it scored
+
+The submission ran on the organizers' hardware, seven benchmarks, one instance each.
+
+| | |
+|---|---|
+| Total score | **318.254** |
+| Benchmarks | 7 (four of them unseen before the final round) |
+| Legality | **7/7 fully clean** — routed, DRC clean, hold, pulse width, simulation |
+| Sum of f_max improvement | **332.784 MHz** |
+| Total LLM spend | **$0.34** across all seven benchmarks |
+| Best single design | `amd_mini-isp` 288.0 → **410.5 MHz** (+42.5 %) |
+
+The row worth pausing on is the spend. **Every dollar and every hour the search cost — β and γ
+together — came to 14.53 points** against 332.784 MHz of gain: that is the entire price of
+searching, and it is the term the design above exists to control. The largest single result in the
+suite, +122.491 MHz, came out of the deterministic ladder with **zero** language-model calls, in
+5.3 minutes of wall clock.
+
+Full per-benchmark scorecard with the α/β/γ decomposition: **[RESULTS.md](RESULTS.md)**.
 
 ## What is honest about this
 
